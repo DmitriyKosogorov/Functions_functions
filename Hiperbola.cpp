@@ -36,6 +36,12 @@ void Hiperbola::maximum(double start, double finish)
 	double maxx = this->znachenie(start);
 	for (double i = start + 1; i <= finish; i = i + 0.1)
 	{
+		//cout << this->znachenie(i) << endl;
+		if (isnan(this->znachenie(i)))
+		{
+			cout << "Infinite" << endl;
+			return;
+		}
 		if (maxx < this->znachenie(i))
 			maxx = this->znachenie(i);
 	}
@@ -46,7 +52,11 @@ void Hiperbola::minimum(double start, double finish)
 	double minn = this->znachenie(start);
 	for (double i = start + 1; i <= finish; i = i + 0.1)
 	{
-		//	cout << this->znachenie(i)<<endl;
+		if (isnan(this->znachenie(i)))
+		{
+			cout << "Infinite" << endl;
+			return;
+		}
 		if (minn > this->znachenie(i))
 			minn = this->znachenie(i);
 	}
