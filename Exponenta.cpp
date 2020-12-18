@@ -34,11 +34,23 @@ double Exponenta::znachenie(double x)
 		ey = pow(E, x);
 	return ey+con;
 }
-void Exponenta::maximum()
+void Exponenta::maximum(double start, double finish)
 {
-	cout << "Infinite" << endl;
+	double maxx = this->znachenie(start);
+	for (double i = start + 1; i <= finish; i = i + 0.1)
+	{
+		if (maxx < this->znachenie(i))
+			maxx = this->znachenie(i);
+	}
+	cout << maxx << endl;
 }
-void Exponenta::minimum()
+void Exponenta::minimum(double start, double finish)
 {
-	cout << this->con << endl;
+	double minn = this->znachenie(start);
+	for (double i = start + 1; i <= finish; i = i + 0.1)
+	{
+		if (minn > this->znachenie(i))
+			minn = this->znachenie(i);
+	}
+	cout << minn << endl;
 }

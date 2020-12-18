@@ -12,7 +12,7 @@ public:
     Exponenta();
     Exponenta(double c1);
     double znachenie(double x);
-    void maximum();
-    void minimum();
+    void maximum(double start, double finish);
+    void minimum(double start, double finish);
 };
 #endif

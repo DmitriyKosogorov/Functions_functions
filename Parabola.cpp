@@ -27,19 +27,23 @@ double Parabola::znachenie(double x)
 {
 	return a * x * x + b * x + c;
 }
-void Parabola::maximum()
+void Parabola::maximum(double start, double finish)
 {
-	if (a < 0)
-		cout<<znachenie(-b / (2 * a))<<endl;
-	else
-		if (a > 0)
-			cout << "Infinite"<<endl;
+	double maxx = this->znachenie(start);
+	for (double i = start + 1; i <= finish; i = i + 0.1)
+	{
+		if (maxx < this->znachenie(i))
+			maxx = this->znachenie(i);
+	}
+	cout << maxx << endl;
 }
-void Parabola::minimum()
+void Parabola::minimum(double start, double finish)
 {
-	if (a > 0)
-		cout<<znachenie(-b / (2 * a))<<endl;
-	else
-		if (a < 0)
-			cout << "- Infinite" << endl;
+	double minn = this->znachenie(start);
+	for (double i = start + 1; i <= finish; i = i + 0.1)
+	{
+		if (minn > this->znachenie(i))
+			minn = this->znachenie(i);
+	}
+	cout << minn << endl;
 }

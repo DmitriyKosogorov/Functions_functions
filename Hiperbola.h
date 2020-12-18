@@ -13,7 +13,7 @@ public:
     Hiperbola();
     Hiperbola(double n, double d);
     double znachenie(double x);
-    void maximum();
-    void minimum();
+    void maximum(double start, double finish);
+    void minimum(double start, double finish);
 };
 #endif

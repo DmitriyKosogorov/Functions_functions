@@ -30,32 +30,21 @@ double Polynom::znachenie(double x)
 	}
 	return result;
 }
-void Polynom::maximum()
+void Polynom::maximum(double start, double finish)
 {
-	cout << "Enter area of searching" << endl;
-	double a, b;
-	cin >> a >> b;
-	
-	if (a > b)
-		swap(a, b);
-	double maxx = this->znachenie(a);
-	for (double i = a + 1; i <= b; i=i+0.1)
+
+	double maxx = this->znachenie(start);
+	for (double i = start + 1; i <= finish; i=i+0.1)
 	{
 		if (maxx < this->znachenie(i))
 			maxx = this->znachenie(i);
 	}
 	cout << maxx << endl;
 }
-void Polynom::minimum()
+void Polynom::minimum(double start, double finish)
 {
-	cout << "Enter area of searching" << endl;
-	double a, b;
-	cin >> a >> b;
-
-	if (a > b)
-		swap(a, b);
-	double minn = this->znachenie(a);
-	for (double i = a + 1; i <= b; i = i + 0.1)
+	double minn = this->znachenie(start);
+	for (double i = start + 1; i <= finish; i = i + 0.1)
 	{
 	//	cout << this->znachenie(i)<<endl;
 		if (minn > this->znachenie(i))

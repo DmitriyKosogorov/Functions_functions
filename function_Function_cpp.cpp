@@ -9,7 +9,7 @@
 using namespace std;
 int main()
 {
-	double x;
+	double x, start = -100, finish = 100;
 	vector<double> vectors;
 	vectors.push_back(3);
 	vectors.push_back(-2);
@@ -21,17 +21,17 @@ int main()
 	cout <<" Enter the x"<<endl;
 	cin >> x;
 	cout << "Parabola:" << endl << par.znachenie(x)<<endl;
-	par.maximum();
-	par.minimum();
+	par.maximum(start, finish);
+	par.minimum(start, finish);
 	cout<< "Hiperbola:" << endl << hip.znachenie(x) << endl;
-	hip.maximum();
-	hip.minimum();
+	hip.maximum(start, finish);
+	hip.minimum(start, finish);
 	cout << "Exponenta:" << endl << exp.znachenie(x) << endl;
-	exp.maximum();
-	exp.minimum();
+	exp.maximum(start, finish);
+	exp.minimum(start, finish);
 	cout << "Polinom:" << endl << pol.znachenie(x) << endl;
-	pol.maximum();
-	pol.minimum();
+	pol.maximum(start, finish);
+	pol.minimum(start, finish);
 	
 	return 0;
 }

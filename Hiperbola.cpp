@@ -31,11 +31,24 @@ double Hiperbola::znachenie(double x)
 	else
 		cout << "denominator equal to zero. "<<endl;
 }
-void Hiperbola::maximum()
+void Hiperbola::maximum(double start, double finish)
 {
-	cout << "Infinite." << endl;
+	double maxx = this->znachenie(start);
+	for (double i = start + 1; i <= finish; i = i + 0.1)
+	{
+		if (maxx < this->znachenie(i))
+			maxx = this->znachenie(i);
+	}
+	cout << maxx << endl;
 }
-void Hiperbola::minimum()
+void Hiperbola::minimum(double start, double finish)
 {
-	cout << "-Infinite" << endl;
+	double minn = this->znachenie(start);
+	for (double i = start + 1; i <= finish; i = i + 0.1)
+	{
+		//	cout << this->znachenie(i)<<endl;
+		if (minn > this->znachenie(i))
+			minn = this->znachenie(i);
+	}
+	cout << minn << endl;
 }
